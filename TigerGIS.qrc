@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/TigerGIS">
+        <file>res/folderOpen.png</file>
+        <file>res/area.png</file>
+        <file>res/bigRaster.png</file>
+        <file>res/buffer.png</file>
+        <file>res/contact_us.png</file>
+        <file>res/convex.png</file>
+        <file>res/edit.png</file>
+        <file>res/edit_start.png</file>
+        <file>res/edit_stop.png</file>
+        <file>res/erase.png</file>
+        <file>res/histogram.png</file>
+        <file>res/intersection.png</file>
+        <file>res/length.png</file>
+        <file>res/load_project.png</file>
+        <file>res/neibor.png</file>
+        <file>res/num.png</file>
+        <file>res/overlay.png</file>
+        <file>res/perimeter.png</file>
+        <file>res/raster.png</file>
+        <file>res/raster_analyse.png</file>
+        <file>res/redo.png</file>
+        <file>res/remove.png</file>
+        <file>res/RGB.png</file>
+        <file>res/save_project.png</file>
+        <file>res/spatial_analyse.png</file>
+        <file>res/statistics.png</file>
+        <file>res/symbol.png</file>
+        <file>res/undo.png</file>
+        <file>res/union.png</file>
+        <file>res/vector_analyse.png</file>
+        <file>res/window_reset.png</file>
+        <file>res/vector.png</file>
+        <file>res/mask.png</file>
+    </qresource>
+</RCC>

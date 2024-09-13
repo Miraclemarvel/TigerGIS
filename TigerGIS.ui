@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TigerGISClass</class>
+ <widget class="QMainWindow" name="TigerGISClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1126</width>
+    <height>728</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>TigerGIS</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="ZoomableGraphicsView" name="graphicsView"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1126</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="file">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionShpFile"/>
+    <addaction name="actionRasterFile"/>
+    <addaction name="actionwktFile"/>
+    <addaction name="actionbigRaster"/>
+    <addaction name="actionsaveProject"/>
+    <addaction name="actionreadProject"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>分析</string>
+    </property>
+    <widget class="QMenu" name="menu_2">
+     <property name="title">
+      <string>矢量分析</string>
+     </property>
+     <property name="icon">
+      <iconset resource="TigerGIS.qrc">
+       <normaloff>:/TigerGIS/res/vector_analyse.png</normaloff>:/TigerGIS/res/vector_analyse.png</iconset>
+     </property>
+     <widget class="QMenu" name="menu_3">
+      <property name="title">
+       <string>统计分析</string>
+      </property>
+      <property name="icon">
+       <iconset resource="TigerGIS.qrc">
+        <normaloff>:/TigerGIS/res/statistics.png</normaloff>:/TigerGIS/res/statistics.png</iconset>
+      </property>
+      <addaction name="actionCalculateNum"/>
+      <addaction name="actionCalculateArea"/>
+      <addaction name="actionCalculatePerimeter"/>
+      <addaction name="actionCalculateLength"/>
+     </widget>
+     <widget class="QMenu" name="menu_4">
+      <property name="title">
+       <string>空间分析</string>
+      </property>
+      <property name="icon">
+       <iconset resource="TigerGIS.qrc">
+        <normaloff>:/TigerGIS/res/spatial_analyse.png</normaloff>:/TigerGIS/res/spatial_analyse.png</iconset>
+      </property>
+      <widget class="QMenu" name="menu_7">
+       <property name="title">
+        <string>叠加分析</string>
+       </property>
+       <property name="icon">
+        <iconset resource="TigerGIS.qrc">
+         <normaloff>:/TigerGIS/res/overlay.png</normaloff>:/TigerGIS/res/overlay.png</iconset>
+       </property>
+       <addaction name="actionIntersect"/>
+       <addaction name="actionUnion"/>
+       <addaction name="actionErase"/>
+      </widget>
+      <addaction name="actionCalculateConvex"/>
+      <addaction name="actionCalculateBuffer"/>
+      <addaction name="menu_7"/>
+     </widget>
+     <addaction name="menu_3"/>
+     <addaction name="menu_4"/>
+    </widget>
+    <widget class="QMenu" name="menu_9">
+     <property name="title">
+      <string>栅格分析</string>
+     </property>
+     <property name="icon">
+      <iconset resource="TigerGIS.qrc">
+       <normaloff>:/TigerGIS/res/raster_analyse.png</normaloff>:/TigerGIS/res/raster_analyse.png</iconset>
+     </property>
+     <addaction name="actiondrawGreyHistogram"/>
+     <addaction name="actionextractByMask"/>
+     <addaction name="actiondomainAnalysis"/>
+    </widget>
+    <addaction name="menu_2"/>
+    <addaction name="menu_9"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <widget class="QMenu" name="menu_6">
+     <property name="title">
+      <string>编辑矢量要素</string>
+     </property>
+     <property name="icon">
+      <iconset resource="TigerGIS.qrc">
+       <normaloff>:/TigerGIS/res/edit.png</normaloff>:/TigerGIS/res/edit.png</iconset>
+     </property>
+     <addaction name="actionStartEditing"/>
+     <addaction name="actionUndo"/>
+     <addaction name="actionRedo"/>
+     <addaction name="actionStopEditing"/>
+    </widget>
+    <addaction name="menu_6"/>
+   </widget>
+   <widget class="QMenu" name="menu_8">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionHelp"/>
+   </widget>
+   <addaction name="file"/>
+   <addaction name="menu_5"/>
+   <addaction name="menu"/>
+   <addaction name="menu_8"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::NoContextMenu</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionsaveProject"/>
+   <addaction name="actionreadProject"/>
+   <addaction name="actionShpFile"/>
+   <addaction name="actionRasterFile"/>
+   <addaction name="actionbigRaster"/>
+   <addaction name="actionStartEditing"/>
+   <addaction name="actionStopEditing"/>
+   <addaction name="actionUndo"/>
+   <addaction name="actionRedo"/>
+   <addaction name="actionHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="minimumSize">
+    <size>
+     <width>246</width>
+     <height>172</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>246</width>
+     <height>524287</height>
+    </size>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTreeView" name="contentTree">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>524287</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="symbolBtn">
+         <property name="text">
+          <string>符号系统</string>
+         </property>
+         <property name="icon">
+          <iconset resource="TigerGIS.qrc">
+           <normaloff>:/TigerGIS/res/symbol.png</normaloff>:/TigerGIS/res/symbol.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="resetBtn">
+         <property name="text">
+          <string>复位</string>
+         </property>
+         <property name="icon">
+          <iconset resource="TigerGIS.qrc">
+           <normaloff>:/TigerGIS/res/window_reset.png</normaloff>:/TigerGIS/res/window_reset.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="dockWidget_3">
+   <property name="maximumSize">
+    <size>
+     <width>524287</width>
+     <height>138</height>
+    </size>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_3">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPlainTextEdit" name="loggerEdit">
+       <property name="styleSheet">
+        <string notr="true">border: none</string>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionShpFile">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/vector.png</normaloff>:/TigerGIS/res/vector.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开矢量文件</string>
+   </property>
+  </action>
+  <action name="actionRasterFile">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/raster.png</normaloff>:/TigerGIS/res/raster.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开栅格文件</string>
+   </property>
+  </action>
+  <action name="actionwktFile">
+   <property name="text">
+    <string>打开wkt文件</string>
+   </property>
+  </action>
+  <action name="actionCalculateNum">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/num.png</normaloff>:/TigerGIS/res/num.png</iconset>
+   </property>
+   <property name="text">
+    <string>数量统计</string>
+   </property>
+  </action>
+  <action name="actionCalculateArea">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/area.png</normaloff>:/TigerGIS/res/area.png</iconset>
+   </property>
+   <property name="text">
+    <string>面积统计</string>
+   </property>
+  </action>
+  <action name="actionCalculatePerimeter">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/perimeter.png</normaloff>:/TigerGIS/res/perimeter.png</iconset>
+   </property>
+   <property name="text">
+    <string>周长统计</string>
+   </property>
+  </action>
+  <action name="actionCalculateLength">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/length.png</normaloff>:/TigerGIS/res/length.png</iconset>
+   </property>
+   <property name="text">
+    <string>长度统计</string>
+   </property>
+  </action>
+  <action name="actionCalculateConvex">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/convex.png</normaloff>:/TigerGIS/res/convex.png</iconset>
+   </property>
+   <property name="text">
+    <string>凸包计算</string>
+   </property>
+  </action>
+  <action name="actionCalculateBuffer">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/buffer.png</normaloff>:/TigerGIS/res/buffer.png</iconset>
+   </property>
+   <property name="text">
+    <string>缓冲区分析</string>
+   </property>
+  </action>
+  <action name="actionStartEditing">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/edit_start.png</normaloff>:/TigerGIS/res/edit_start.png</iconset>
+   </property>
+   <property name="text">
+    <string>开始编辑</string>
+   </property>
+  </action>
+  <action name="actionStopEditing">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/edit_stop.png</normaloff>:/TigerGIS/res/edit_stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>停止编辑</string>
+   </property>
+  </action>
+  <action name="actionIntersect">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/intersection.png</normaloff>:/TigerGIS/res/intersection.png</iconset>
+   </property>
+   <property name="text">
+    <string>交集</string>
+   </property>
+  </action>
+  <action name="actionUnion">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/union.png</normaloff>:/TigerGIS/res/union.png</iconset>
+   </property>
+   <property name="text">
+    <string>并集</string>
+   </property>
+  </action>
+  <action name="actionErase">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/erase.png</normaloff>:/TigerGIS/res/erase.png</iconset>
+   </property>
+   <property name="text">
+    <string>擦除</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/contact_us.png</normaloff>:/TigerGIS/res/contact_us.png</iconset>
+   </property>
+   <property name="text">
+    <string>联系我们</string>
+   </property>
+  </action>
+  <action name="actiondrawGreyHistogram">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/histogram.png</normaloff>:/TigerGIS/res/histogram.png</iconset>
+   </property>
+   <property name="text">
+    <string>绘制灰度直方图</string>
+   </property>
+  </action>
+  <action name="actionvectorPickle">
+   <property name="text">
+    <string>矢量掩膜</string>
+   </property>
+  </action>
+  <action name="actionrasterPickle">
+   <property name="text">
+    <string>栅格掩膜</string>
+   </property>
+  </action>
+  <action name="actionbigRaster">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/bigRaster.png</normaloff>:/TigerGIS/res/bigRaster.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开超大栅格数据</string>
+   </property>
+  </action>
+  <action name="actionsaveProject">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/save_project.png</normaloff>:/TigerGIS/res/save_project.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存为工程文件</string>
+   </property>
+  </action>
+  <action name="actionreadProject">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/load_project.png</normaloff>:/TigerGIS/res/load_project.png</iconset>
+   </property>
+   <property name="text">
+    <string>导入工程文件</string>
+   </property>
+  </action>
+  <action name="actiondomainAnalysis">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/neibor.png</normaloff>:/TigerGIS/res/neibor.png</iconset>
+   </property>
+   <property name="text">
+    <string>邻域分析</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/undo.png</normaloff>:/TigerGIS/res/undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>撤销</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/redo.png</normaloff>:/TigerGIS/res/redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>重做</string>
+   </property>
+  </action>
+  <action name="actionextractByMask">
+   <property name="icon">
+    <iconset resource="TigerGIS.qrc">
+     <normaloff>:/TigerGIS/res/mask.png</normaloff>:/TigerGIS/res/mask.png</iconset>
+   </property>
+   <property name="text">
+    <string>掩膜提取</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ZoomableGraphicsView</class>
+   <extends>QGraphicsView</extends>
+   <header>ZoomableGraphicsView.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="TigerGIS.qrc"/>
+ </resources>
+ <connections/>
+</ui>
